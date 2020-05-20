@@ -3,7 +3,15 @@ import { Card, Button } from 'react-bootstrap';
 
 
 
-function Animal({ animal: { id, species, gender, name, image } }) {
+function Animal({ animal: { id, species, gender, name, image }, slaughter, animal }) {
+
+  const handleSlaughter = () => {
+
+    slaughter(animal)
+
+  }
+
+
   return (
    
 
@@ -16,7 +24,7 @@ function Animal({ animal: { id, species, gender, name, image } }) {
             <br/>
             {gender}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button onClick={handleSlaughter} variant="primary">SLAUGHTER</Button>
         </Card.Body>
       </Card>
         

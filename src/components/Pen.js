@@ -11,10 +11,9 @@ import { getAnimalsForPen } from '../utilites/utils.js';
 
 
 
-function Pen({ pen, animals }) {
+function Pen({ pen, animals, slaughter }) {
 
-  console.log(animals, "animals in pen")
-  console.log(pen, "pen in pen")
+
 
   let animalsForThisPen = getAnimalsForPen(animals, pen)
   
@@ -22,7 +21,7 @@ function Pen({ pen, animals }) {
   return (
     <Row style={{  borderStyle:"solid", padding:"10px", borderColor:"red"}}>
       <header>{pen.title}s pen</header>
-        {animalsForThisPen.map(animal => <Col key={animal.id}><Animal animal={animal} /></Col>)}
+        {animalsForThisPen.map(animal => <Col key={animal.id}><Animal slaughter={slaughter} animal={animal} /></Col>)}
     </Row>
   )
 }

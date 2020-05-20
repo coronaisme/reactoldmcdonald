@@ -20,6 +20,24 @@ function App() {
   ])
 
 
+
+  const slaughter = (animal) => {
+
+    let foundPen = pens.find(pen => pen.title === animal.species)
+    let newAnimals = foundPen.animals.filter(animalId => animal.id !== animalId)
+    // found pen where animal lives
+    // made new array excluding animal to be slaughtered
+    // update Pens state
+      // now we'll make a copy of all the pens without "foundPen"
+      // add foundPen into our copy of Pens with replacing old animalArray with newAnimials
+
+    // setPensState([pens.filter(pen => pen.title !== foundPen.title), { ...foundPen, animals:newAnimals} ]);
+    setAnimalsState(animals.filter(myAnimal => myAnimal.id !== animal.id))
+    
+
+  }
+
+
   const addAnimalToFarm = (animal) => {
 
 
@@ -55,7 +73,7 @@ function App() {
           <Col><Form addAnimalToFarm={addAnimalToFarm} currentBiggestId={currentBiggestId}/></Col> 
         </Row>    
         <Row>
-         <Col><Pens pens={pens} animals={animals} /></Col>
+         <Col><Pens slaughter={slaughter} pens={pens} animals={animals} /></Col>
         </Row>
     </Container>
     </div>

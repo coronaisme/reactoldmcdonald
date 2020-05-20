@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap';
 
 
 
-function Pens({ animals, pens }) {
+function Pens({ animals, pens, slaughter }) {
 
 
 
@@ -12,7 +12,7 @@ function Pens({ animals, pens }) {
    
       <Row>
 
-        {pens.map(pen => <Col key={Math.random()}><Pen pen={pen} animals={animals}/></Col>)}
+        {pens.map(pen => <Col key={Math.random()}><Pen slaughter={slaughter} pen={pen} animals={animals}/></Col>)}
 
       </Row>
    

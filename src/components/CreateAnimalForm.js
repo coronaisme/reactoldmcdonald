@@ -19,7 +19,7 @@ function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
       id: currentBiggestId + 1
     }
       addAnimalToFarm(animal)
-      console.log("hit")
+    
       setFormInputs({ species:"", name:"", gender:{male:true, female:false}, image:"" })
   }
 
