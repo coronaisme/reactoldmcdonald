@@ -13,11 +13,15 @@ import { getAnimalsForPen } from '../utilites/utils.js';
 
 function Pen({ pen, animals }) {
 
+  console.log(animals, "animals in pen")
+  console.log(pen, "pen in pen")
+
   let animalsForThisPen = getAnimalsForPen(animals, pen)
   
   
   return (
-    <Row>
+    <Row style={{  borderStyle:"solid", padding:"10px", borderColor:"red"}}>
+      <header>{pen.title}s</header>
         {animalsForThisPen.map(animal => <Col key={animal.id}><Animal animal={animal} /></Col>)}
     </Row>
   )

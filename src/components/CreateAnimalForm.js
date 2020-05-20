@@ -3,27 +3,43 @@ import { Form, Button } from "react-bootstrap";
 
 
 
-function CreateAnimalForm() {
+function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
 
 
   const [ formInputs, setFormInputs ] = useState({ species:"", name:"", gender:{male:true, female:false}, image:"" })
+
+
+  const handleCreateAnimalClick = (e) => {
+    e.preventDefault()
+    let animal = {
+      species: formInputs.species,
+      name: formInputs.name,
+      gender: formInputs.gender.male ? "male" : "female",
+      image: formInputs.image,
+      id: currentBiggestId + 1
+    }
+      addAnimalToFarm(animal)
+      console.log("hit")
+      setFormInputs({ species:"", name:"", gender:{male:true, female:false}, image:"" })
+  }
+
 
   return (
     <Form>
 
       <Form.Group controlId="formSpecies">
         <Form.Label>Species</Form.Label>
-        <Form.Control value={formInputs.species} type="text" placeholder="Enter Species" />
+        <Form.Control value={formInputs.species} type="text" placeholder="Enter Species" onChange={(e) => setFormInputs({ ...formInputs, species: e.target.value })} />
       </Form.Group>
 
       <Form.Group controlId="formName">
         <Form.Label>Name</Form.Label>
-        <Form.Control value={formInputs.name} type="text" placeholder="Enter Name" />
+        <Form.Control value={formInputs.name} type="text" placeholder="Enter Name" onChange={(e) => setFormInputs({ ...formInputs, name: e.target.value })} />
       </Form.Group>
 
       <Form.Group controlId="formImage">
         <Form.Label>Image Url</Form.Label>
-        <Form.Control value={formInputs.image} type="text" placeholder="Enter Image Url" />
+        <Form.Control value={formInputs.image} type="text" placeholder="Enter Image Url"  onChange={(e) => setFormInputs({ ...formInputs, image: e.target.value })} />
       </Form.Group>
 
 
@@ -33,8 +49,8 @@ function CreateAnimalForm() {
       </Form.Group>
 
 
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="primary" type="click" onClick={handleCreateAnimalClick} >
+        Create Animal
       </Button>
     </Form>
   )
