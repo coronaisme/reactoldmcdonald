@@ -21,7 +21,7 @@ function Pen({ pen, animals }) {
   
   return (
     <Row style={{  borderStyle:"solid", padding:"10px", borderColor:"red"}}>
-      <header>{pen.title}s</header>
+      <header>{pen.title}s Pen</header>
         {animalsForThisPen.map(animal => <Col key={animal.id}><Animal animal={animal} /></Col>)}
     </Row>
   )

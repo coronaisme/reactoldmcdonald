@@ -22,17 +22,24 @@ function App() {
 
   const addAnimalToFarm = (animal) => {
 
+
       let pen = pens.find(pen => {
         return pen.title === animal.species
       })
 
-      console.log([ pens.filter(filterPen => filterPen.title !== pen.title ), { ...pen, animals:[...pen.animals, animal.id] } ])
+      //if pen then:
+      if(pen){
       setPensState([ ...pens.filter(filterPen => filterPen.title !== pen.title ), { ...pen, animals:[...pen.animals, animal.id] } ] )
+      //else make pen
+      } else {
+        setPensState([...pens, { title:animal.species, animals:[animal.id] }])
+      }
+
       setAnimalsState([ ...animals, animal])
+
 
   }
 
-  console.log(pens, "pens")
 
   let currentBiggestId = animals.length < 1 ? 1 : animals[animals.length - 1].id
 
