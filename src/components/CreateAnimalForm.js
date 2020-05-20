@@ -15,7 +15,7 @@ function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
       species: formInputs.species,
       name: formInputs.name,
       gender: formInputs.gender.male ? "male" : "female",
-      image: formInputs.image,
+      image: formInputs.image === "" ? "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.agoramedia.com%2Feverydayhealth%2Fgcms%2Fanimals-that-can-cure-human-diseases-08-pg-full.jpg&f=1&nofb=1" : formInputs.image,
       id: currentBiggestId + 1
     }
       addAnimalToFarm(animal)
@@ -41,6 +41,8 @@ function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
         <Form.Label>Image Url</Form.Label>
         <Form.Control value={formInputs.image} type="text" placeholder="Enter Image Url"  onChange={(e) => setFormInputs({ ...formInputs, image: e.target.value })} />
       </Form.Group>
+
+      {/* CHANGING TO DROPDOWN */}
 
 
       <Form.Group controlId="formGender">
