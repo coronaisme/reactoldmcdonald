@@ -12,7 +12,7 @@ function Pens({ animals, pens, slaughter }) {
    
       <Row>
 
-        {pens.map(pen => <Col key={Math.random()}><Pen slaughter={slaughter} pen={pen} animals={animals}/></Col>)}
+        {pens.map(pen => <Col key={Math.random()}><Pen style={{height:'490px'}}slaughter={slaughter} pen={pen} animals={animals}/></Col>)}
 
       </Row>
    

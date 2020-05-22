@@ -31,9 +31,19 @@ function App() {
       // now we'll make a copy of all the pens without "foundPen"
       // add foundPen into our copy of Pens with replacing old animalArray with newAnimials
 
-    // setPensState([pens.filter(pen => pen.title !== foundPen.title), { ...foundPen, animals:newAnimals} ]);
+    setPensState(pens.map(pen => {
+
+      if (pen.title === animal.species){
+        // return a copy of pen with animalId removed
+        return { ...pen, animals:newAnimals }
+      } else {
+        return pen
+      }
+      
+    })
+    )
+
     setAnimalsState(animals.filter(myAnimal => myAnimal.id !== animal.id))
-    
 
   }
 
@@ -47,7 +57,14 @@ function App() {
 
       //if pen then:
       if(pen){
-      setPensState([ ...pens.filter(filterPen => filterPen.title !== pen.title ), { ...pen, animals:[...pen.animals, animal.id] } ] )
+        setPensState(pens.map(pen => {
+          if (pen.title === animal.species){
+            return {...pen, animals:[...pen.animals, animal.id]}
+          } else {
+            return pen
+          }
+        }))
+      // setPensState([ ...pens.filter(filterPen => filterPen.title !== pen.title ), { ...pen, animals:[...pen.animals, animal.id] } ] )
       //else make pen
       } else {
         setPensState([...pens, { title:animal.species, animals:[animal.id] }])
