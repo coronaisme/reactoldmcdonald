@@ -34,8 +34,8 @@ function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
   const handleSelect = (animalImgURL) => {
     setFormInputs({
       ...formInputs,
-      image:animalImgURL
-    })
+      image: animalImgURL,
+    });
   };
 
   return (
