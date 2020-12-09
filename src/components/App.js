@@ -103,6 +103,7 @@ function App() {
               addAnimalToFarm={addAnimalToFarm}
               currentBiggestId={currentBiggestId}
             />
+            <br />
           </Col>
         </Row>
         <Row>

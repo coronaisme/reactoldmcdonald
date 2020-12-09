@@ -14,7 +14,7 @@ function Pen({ pen, animals, slaughter }) {
       <header>{pen.title}s pen</header>
       {animalsForThisPen.map((animal) => (
         <Col key={animal.id}>
-          <Animal slaughter={slaughter} animal={animal} />
+          <Animal slaughter={slaughter}  animal={animal} />
         </Col>
       ))}
     </Row>

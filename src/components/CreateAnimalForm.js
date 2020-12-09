@@ -38,11 +38,17 @@ function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
     });
   };
 
+  const formStyles = {
+    width: "60%",
+    textAlign: "center",
+    display: "inline-block",
+  };
+
   return (
     <Form>
       <Form.Group controlId="formSpecies">
-        <Form.Label>Species</Form.Label>
         <Form.Control
+          style={formStyles}
           value={formInputs.species}
           type="text"
           placeholder="Enter Species"
@@ -53,8 +59,8 @@ function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
       </Form.Group>
 
       <Form.Group controlId="formName">
-        <Form.Label>Name</Form.Label>
         <Form.Control
+          style={formStyles}
           value={formInputs.name}
           type="text"
           placeholder="Enter Name"
@@ -183,6 +189,7 @@ function CreateAnimalForm({ addAnimalToFarm, currentBiggestId }) {
       <Button variant="primary" type="click" onClick={handleCreateAnimalClick}>
         Create Animal
       </Button>
+      <br />
     </Form>
   );
 }

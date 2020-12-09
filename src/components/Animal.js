@@ -51,6 +51,7 @@ function Animal({
           SLAUGHTER
         </Button>
         <br />
+        <br />
         <Button onClick={handlePetting} variant="primary">
           Pet Me!
         </Button>
