@@ -18,7 +18,7 @@ function App() {
     {
       id: 1,
       species: "cow",
-      gender: "female",gi
+      gender: "female",
       name: "jason",
       image:
         "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2Fcd%2F26%2F3a%2Fcd263af1e1af8d0de15ba2ee25afdded.jpg&f=1&nofb=1",
